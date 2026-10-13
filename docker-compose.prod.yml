@@ -1,4 +1,4 @@
-﻿name: ${PROJECT_NAME}-axum
+name: ${PROJECT_NAME}-rust
 
 services:
   app:
@@ -6,24 +6,12 @@ services:
       context: .
       dockerfile: Dockerfile
       target: prod
-    container_name: ${PROJECT_NAME}-axum-app
+    container_name: ${PROJECT_NAME}-rust-app
     restart: always
     env_file:
       - .env
     networks:
       - template-network
-
-  caddy:
-    image: caddy:2-alpine
-    container_name: ${PROJECT_NAME}-axum-caddy
-    restart: always
-    volumes:
-      - ./volume/caddy/Caddyfile:/etc/caddy/Caddyfile
-      - ./volume/caddy/data:/data
-    networks:
-      - template-network
-    depends_on:
-      - app
 
 networks:
   template-network:

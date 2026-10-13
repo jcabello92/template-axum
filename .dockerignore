@@ -1,4 +1,4 @@
-﻿.env
+.env
 .env.*
 .gitignore
 docker-compose.prod.yml
@@ -7,3 +7,9 @@ README.md
 .git/
 
 .DS_Store
+
+# Temporales de Cargo y binarios
+target/
+app
+server
+*.exe
