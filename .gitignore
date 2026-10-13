@@ -8,6 +8,5 @@ target/
 Cargo.lock
 
 # Binarios y compilados
-app
 server
 *.exe
